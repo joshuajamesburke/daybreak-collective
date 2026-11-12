@@ -96,6 +96,12 @@
   .about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; }
   .about .big { font-family: var(--serif); font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4; }
   .about .body { color: var(--ink-2); columns: 2; column-gap: 36px; margin-top: 28px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; border-top: 1px solid var(--ink); }
+  .stats div { padding: 20px 20px 0 0; }
+  .stats strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1; color: var(--dawn); }
+  .stats span { display: block; margin-top: 8px; font-size: 15px; color: var(--ink-2); }
+  .partners { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .partners span { font: 13px var(--mono); padding: 7px 12px; border: 1px solid #3a4652; color: #e9e5dc; }
 
   /* work */
   .work-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 56px; }
@@ -137,9 +143,8 @@
   .teams { background: var(--paper-2); }
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 56px; }
   .team-grid p { color: var(--ink-2); font-size: 16px; }
-  .team-grid .names { font-size: 15px; color: var(--ink); margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--rule); }
-  .leaders { display: flex; flex-wrap: wrap; gap: 0; margin-top: 64px; border-top: 1px solid var(--ink); }
-  .leaders div { flex: 1 1 200px; padding: 20px 20px 0 0; }
+  .leaders { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 32px; margin-top: 56px; }
+  .leaders div { padding: 20px 0 24px; border-top: 1px solid var(--rule); }
   .leaders strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 22px; }
   .leaders span { font-size: 14px; color: var(--ink-2); }
 
@@ -177,6 +182,8 @@
     .about .body { columns: 1; }
     .work-head { flex-direction: column; align-items: start; }
     .work, .team-grid { grid-template-columns: 1fr; }
+    .leaders { grid-template-columns: 1fr 1fr; gap: 0 20px; }
+    .stats strong { font-size: 36px; }
     .work > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
     .work .n { margin-bottom: 16px; }
     .field-grid { grid-template-columns: 1fr; }
@@ -206,7 +213,7 @@
 
 <section class="hero" style="padding:0">
   <div class="wrap">
-    <div class="label">Student-led &middot; Founded at The Nueva School</div>
+    <div class="label">Student-led &middot; Chapters in 3 countries</div>
     <h1>Helping communities <em>rebuild</em>, one business at a time.</h1>
     <p class="lede">We connect high school students with healthcare businesses and nonprofits in regions recovering from disaster and conflict, and help them grow.</p>
     <a class="btn" href="#contact">Get involved</a><a class="btn ghost" href="#work">See what we do</a>
@@ -223,8 +230,13 @@
       <p class="big">When a flood or a war hits, local clinics and health organizations are often the first to respond and the last to recover. They rarely have time for a website, a social media plan, or a better way to track donors.</p>
       <div class="body">
         <p>That's where we come in. Daybreak Collective puts student teams to work on the practical problems these organizations face: branding, marketing, digital tools, and putting AI to use in day-to-day operations.</p>
-        <p>We started as the Global Development Club at The Nueva School in San Mateo, California. We're now growing into a network of chapters at high schools around the world, each run by students.</p>
+        <p>We started as the Global Development Club at The Nueva School in San Mateo, California. Today we have student-run chapters at high schools in three U.S. states and three countries, and we work with organizations around the world.</p>
         <p>Our partners get real help, regardless of their size or location. Our members get hands-on experience working alongside business and nonprofit leaders.</p>
+      </div>
+      <div class="stats">
+        <div><strong>3</strong><span>countries with chapters</span></div>
+        <div><strong>3</strong><span>U.S. states</span></div>
+        <div><strong>20+</strong><span>student members</span></div>
       </div>
     </div>
   </div>
@@ -278,10 +290,14 @@
   <div class="wrap">
     <div class="field-intro">
       <div>
-        <div class="label">From the field</div>
-        <h2>The places our partners work</h2>
+        <div class="label">Our partners</div>
+        <h2>Working with organizations worldwide</h2>
       </div>
-      <p>Our partners send us photos and footage from the ground. Our media team turns it into stories that help them raise awareness and support. These images come from a region still recovering from severe flooding.</p>
+      <div>
+        <p>We partner with healthcare organizations wherever communities are recovering from crisis. Partners share photos and footage from the ground, and our media team turns it into stories that build awareness and support.</p>
+        <p style="margin-top:16px">Right now we're supporting flood response in Nepal alongside:</p>
+        <div class="partners"><span>CDC Doti</span><span>Volunteer Corps</span></div>
+      </div>
     </div>
     <div class="field-grid">
       <figure class="tall">
@@ -292,7 +308,7 @@
       </figure>
       <figure>
         <img src="images/river.jpg" alt="A river valley with a wide channel of mud and gravel cut through green terraced hillsides" loading="lazy" style="aspect-ratio:4/3">
-        <figcaption>Partner field photos, 2026</figcaption>
+        <figcaption>Flood response in Nepal, 2026. Photos from our partners.</figcaption>
       </figure>
     </div>
   </div>
@@ -329,28 +345,27 @@
   <div class="wrap">
     <div class="label">Our team</div>
     <h2 style="margin-top:16px;max-width:20ch">Twenty-plus students across three teams</h2>
-    <div class="team-grid">
-      <div>
-        <h3>Outreach &amp; Logistics</h3>
-        <p style="margin-top:12px">Finds and connects with healthcare organizations in post-disaster and post-conflict areas, and with schools that want to start a chapter.</p>
-        <p class="names">Braden Y., Henry H., Juan R., Andy M., Cooper W., Matthew S., Etienne Y., Aaron E.</p>
-      </div>
-      <div>
-        <h3>Social Media</h3>
-        <p style="margin-top:12px">Turns partner footage and interviews into short and long-form content that helps partners tell their story.</p>
-        <p class="names">Daniel M., Dito M., Tori N., Miranda L., Amelia Y.</p>
-      </div>
-      <div>
-        <h3>AI &amp; Technology</h3>
-        <p style="margin-top:12px">Builds tools that automate partners' logistics, runs our seminars, and maintains our own digital presence, including this site.</p>
-        <p class="names">Josh B., Ethan C., Evan C., Matthew S., Ivan C., Lucas Y.</p>
-      </div>
-    </div>
     <div class="leaders">
       <div><strong>Vihaan C.</strong><span>President &amp; Founder</span></div>
       <div><strong>Cooper W.</strong><span>Executive Co-Lead, Fundraising</span></div>
       <div><strong>Andy M.</strong><span>Executive Co-Lead, Operations</span></div>
       <div><strong>Ivan C.</strong><span>Recruiting Co-Lead</span></div>
+      <div><strong>Josh B.</strong><span>AI &amp; Technology</span></div>
+      <div><strong>Daniel M.</strong><span>Social Media</span></div>
+    </div>
+    <div class="team-grid">
+      <div>
+        <h3>Outreach &amp; Logistics</h3>
+        <p style="margin-top:12px">Finds and connects with healthcare organizations in post-disaster and post-conflict areas, and with schools that want to start a chapter.</p>
+      </div>
+      <div>
+        <h3>Social Media</h3>
+        <p style="margin-top:12px">Turns partner footage and interviews into short and long-form content that helps partners tell their story.</p>
+      </div>
+      <div>
+        <h3>AI &amp; Technology</h3>
+        <p style="margin-top:12px">Builds tools that automate partners' logistics, runs our seminars, and maintains our own digital presence, including this site.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -360,7 +375,7 @@
     <div>
       <div class="label">For students &amp; schools</div>
       <h2 style="margin:16px 0 24px">Start a chapter at your school</h2>
-      <p>Daybreak Collective is run by students, for students. We're looking for high schoolers anywhere in the world who want hands-on experience with real organizations, and teachers who can help them get started.</p>
+      <p>Daybreak Collective is run by students, for students. With chapters in three states and three countries, we're looking for more high schoolers anywhere in the world who want hands-on experience with real organizations, and teachers who can help them get started.</p>
       <ol>
         <li>Email us to introduce yourself and your school.</li>
         <li>Meet with our team to learn how our chapter runs.</li>
